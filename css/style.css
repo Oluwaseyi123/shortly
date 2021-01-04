@@ -5,6 +5,24 @@
           box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'GTWalsheimPro-bold';
+  src: url("/font/GTWalsheimPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'GTWalsheimPro-medium';
+  src: url("/font/GTWalsheimPro-Medium.ttf") format("truetype");
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: 'GTWalsheimPro-regular';
+  src: url("/font/GTWalsheimPro-Regular.ttf") format("truetype");
+  font-weight: 'regular';
+}
+
 :root {
   --default-margin: 30px 30px;
   --larger-margin: 30px 70px;
