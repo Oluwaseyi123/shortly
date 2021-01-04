@@ -4,22 +4,23 @@
     box-sizing: border-box;
     
 }
+
 @font-face {
     font-family: 'GTWalsheimPro-bold';
-    src: url("../font/GTWalsheimPro-Bold.ttf") format("truetype");
-    font-weight: bold;
+    src: url("./font/GTWalsheimPro-Bold.ttf") format("truetype");
+    
 }
   
-  @font-face {
+@font-face {
     font-family: 'GTWalsheimPro-medium';
-    src: url("../font/GTWalsheimPro-Medium.ttf") format("truetype");
-    font-weight: medium;
+    src: url("./font/GTWalsheimPro-Medium.ttf") format("truetype");
+    
 }
   
-  @font-face {
+@font-face {
     font-family: 'GTWalsheimPro-regular';
-    src: url("../font/GTWalsheimPro-Regular.ttf") format("truetype");
-    font-weight: 'regular';
+    src: url("./font/GTWalsheimPro-Regular.ttf") format("truetype");
+    
 }
 
 :root{
