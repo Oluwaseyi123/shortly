@@ -497,6 +497,7 @@ footer > p {
 
 .footer li {
   padding-bottom: 10px;
+  list-style: none;
 }
 
 .footer a {
