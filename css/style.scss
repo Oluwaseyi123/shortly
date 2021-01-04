@@ -27,6 +27,8 @@ nav{
     margin: var(--default-margin);
     align-items: center;
     height: 40px;
+    transition: all .4s ease;
+    
     ul{
         display: none;
         align-items: center;
@@ -47,13 +49,42 @@ nav{
     justify-content: space-between;
 }
 .left-nav {
-   
+    transition: all .4s ease;
     p{
     padding-right: 1.5rem;
     font-size: 20px;
     font-family: var(--font-family-medium);
     }
 }
+
+.left-navs{
+   
+    .nav-ul{
+        background: rgba($color: #808080, $alpha: .5);
+        position: absolute;
+        display: block;
+        margin: 0 auto;
+        width: 180px;
+        align-items: center;
+        text-align: right;
+        right: 0vw;
+        top: 11vh;
+        transition: all .4s ease;
+        li:nth-of-type(1){
+            padding-top: 10px;
+        }
+        li{
+            padding-bottom: 40px;
+            a{
+                transition: all .4s ease;
+            }
+            a:hover{
+                font-size: 16px;
+            }
+        }
+    }
+}
+
 .right-nav{
     ul{
         li:nth-of-type(2){
@@ -71,19 +102,38 @@ nav{
 }
 .nav-icon{
     cursor: pointer;
+   
+   transform-origin: 25% 70%;
 }
+
 .bar-one{
     background: black;
     width: 18px;
     height: 2px;
     margin-bottom: 2px;
 }
+
+.onee{
+     transform: rotate(45deg);
+     transition: transform .1s ease ;
+     transform-origin: 25% 100%;
+}
+
+.twoo{
+    transform: rotate(-45deg);
+    transition: all .1s ease;
+}
+
+.threee{
+    display: none;
+    transition: all .1s ease;
+}
+
 .hero-section{
-   
     margin-bottom: 10px;
     overflow: hidden;
-    
 }
+
 .hero-image{
     margin-left: 30px;
 }

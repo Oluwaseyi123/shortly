@@ -50,9 +50,7 @@ function shortUrl(){
     const long = document.querySelector('.long-url')
     const shortenUrl = new ShortenUrl()
     if(longUrl == ''){
-        
         showMessage('Please enter a link', 'error-text')
-        console.log('put in link')
     }else if(!longUrl.startsWith('http') || !longUrl.startsWith('http') || !longUrl.startsWith('')){
        showMessage('Please put in a proper link', 'error-text')
     }else{
@@ -68,7 +66,6 @@ function shortUrl(){
             linksTable.style.display = 'flex'
             copyBtn.addEventListener('click', copyText)
             long.value = ''
-            console.log(res.shortUrl)
         }).catch((err) => console.log(err))
     }
 }
@@ -98,4 +95,21 @@ function showMessage(message, className){
     setTimeout(()=> {
         messageParagraph.textContent = ''
     }, 3000)
+}
+
+const navIcon = document.querySelector('.nav-icon')
+navIcon.addEventListener('click', animateIcon)
+
+function animateIcon(){
+    const firstNav = document.querySelector('.one')
+    const secondNav = document.querySelector('.two')
+    const thirdNav = document.querySelector('.three')
+    const leftNav = document.querySelector('.left-nav')
+    firstNav.classList.toggle('onee')
+    
+    secondNav.classList.toggle('twoo')
+    thirdNav.classList.toggle('threee')
+
+    leftNav.classList.toggle('left-navs')
+    console.log('worle')
 }

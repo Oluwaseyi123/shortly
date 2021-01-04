@@ -37,6 +37,8 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   height: 40px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 nav ul {
@@ -67,10 +69,48 @@ nav ul li a {
           justify-content: space-between;
 }
 
+.left-nav {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
 .left-nav p {
   padding-right: 1.5rem;
   font-size: 20px;
   font-family: var(--font-family-medium);
+}
+
+.left-navs .nav-ul {
+  background: rgba(128, 128, 128, 0.5);
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  width: 180px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: right;
+  right: 0vw;
+  top: 11vh;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.left-navs .nav-ul li:nth-of-type(1) {
+  padding-top: 10px;
+}
+
+.left-navs .nav-ul li {
+  padding-bottom: 40px;
+}
+
+.left-navs .nav-ul li a {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.left-navs .nav-ul li a:hover {
+  font-size: 16px;
 }
 
 .right-nav ul li:nth-of-type(2) a {
@@ -83,6 +123,8 @@ nav ul li a {
 
 .nav-icon {
   cursor: pointer;
+  -webkit-transform-origin: 25% 70%;
+          transform-origin: 25% 70%;
 }
 
 .bar-one {
@@ -90,6 +132,30 @@ nav ul li a {
   width: 18px;
   height: 2px;
   margin-bottom: 2px;
+}
+
+.onee {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .1s ease;
+  transition: -webkit-transform .1s ease;
+  transition: transform .1s ease;
+  transition: transform .1s ease, -webkit-transform .1s ease;
+  -webkit-transform-origin: 25% 100%;
+          transform-origin: 25% 100%;
+}
+
+.twoo {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
+.threee {
+  display: none;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
 }
 
 .hero-section {
