@@ -37,17 +37,24 @@ class ShortenUrl{
     }
 }
 
+class LocalStorage{
+    addToLocalStorage(){
+
+    }
+}
+
 function shortUrl(){
-    const copyBtn = document.querySelector('.copy-link')
+    let copyBtn = document.querySelector('.copy-link')
     //copyBtn.style.display = "none"
     let longUrl = document.querySelector('.long-url').value
+    const long = document.querySelector('.long-url')
     const shortenUrl = new ShortenUrl()
     if(longUrl == ''){
         
         showMessage('Please enter a link', 'error-text')
         console.log('put in link')
     }else if(!longUrl.startsWith('http') || !longUrl.startsWith('http') || !longUrl.startsWith('')){
-        console.log('Please put in a proper link')
+       showMessage('Please put in a proper link', 'error-text')
     }else{
         shortenUrl.shorten().then((res) => {
             //document.querySelector('.long-url').value = res.shortUrl;
@@ -59,9 +66,8 @@ function shortUrl(){
             shortLink.value = res.shortUrl
             
             linksTable.style.display = 'flex'
-            if(copyBtn.style.display = "block" || longUrl.startsWith('rebrand')){
-                copyBtn.addEventListener('click', copyText)
-            }
+            copyBtn.addEventListener('click', copyText)
+            long.value = ''
             console.log(res.shortUrl)
         }).catch((err) => console.log(err))
     }
@@ -69,12 +75,18 @@ function shortUrl(){
 
 
 function copyText(){
+    let copyBtn = document.querySelector('.copy-link')
     let shortLink = document.querySelector('.short-link')
     shortLink.select()
     shortLink.setSelectionRange(0, 99999999999)
 
+    copyBtn.innerHTML = 'Copied!'
+
+    setTimeout(() => {
+        copyBtn.innerHTML = 'Copy Link'
+    }, 2000)
     document.execCommand("copy")
-    alert("link copied")
+    
 }
 
 function showMessage(message, className){
