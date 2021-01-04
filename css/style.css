@@ -7,17 +7,17 @@
 
 @font-face {
   font-family: 'GTWalsheimPro-bold';
-  src: url("./font/GTWalsheimPro-Bold.ttf") format("truetype");
+  src: url("../fonts/font/GTWalsheimPro-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'GTWalsheimPro-medium';
-  src: url("./font/GTWalsheimPro-Medium.ttf") format("truetype");
+  src: url("../fonts/fontGTWalsheimPro-Medium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: 'GTWalsheimPro-regular';
-  src: url("./font/GTWalsheimPro-Regular.ttf") format("truetype");
+  src: url("../fonts/fontGTWalsheimPro-Regular.ttf") format("truetype");
 }
 
 :root {
