@@ -1,4 +1,5 @@
 console.log(innerWidth)
+
 const boostImage = document.querySelector('.boost-image')
 const boostLinksDiv = document.querySelector('.boost-links-div')
 if(innerWidth >= "1064"){
@@ -8,41 +9,68 @@ if(innerWidth >= "1064"){
     console.log('bla')
 }
 
-//let endpoint = 'https://jsonbox.io/box_12b639ef5bffd67997b2'
 const submitBtn = document.querySelector('.shorten-btn')
 
 submitBtn.addEventListener('click', shortUrl)
 
 class ShortenUrl{
-    async shorten(link){
-        const response = await fetch("https://bitlymikilior1v1.p.rapidapi.com/checkBitlyProDomain", {
+    async shorten(){
+        
+        let url = document.querySelector('.long-url').value
+        const response = await fetch("https://api.rebrandly.com/v1/links", {
             "method": "POST",
             "headers": {
-                "content-type": "application/x-www-form-urlencoded",
-                "x-rapidapi-key": "8600504e47mshd622e6fcc528e4ap18cf87jsn2a5ba9232128",
-                "x-rapidapi-host": "Bitlymikilior1V1.p.rapidapi.com"
+                //'Authorization':'Bearer {o_pb2re7bu5}',
+                'Content-type': 'application/json',
+                'apikey': 'cba06eaddacf44f0abeb46e450565972',
+                //'workspace': '21f813c022e040629f074e0f76360a4e'
+               
             },
-            "body": {
-                "accessToken": "undefined",
-                "domain": "undefined"
-            }
+            body: 
+                JSON.stringify({
+                    domain: "{ fullName: 'rebrand.ly'}",
+                    destination: `${url}`,
+                })
             })
-        const responseJSON = await response.json(link)
+        const responseJSON = await response.json()
         return responseJSON;
     }
 }
 
-
 function shortUrl(){
-    const longUrl = document.querySelector('.long-url').value
+    const copyBtn = document.querySelector('.copy-link')
+    //copyBtn.style.display = "none"
+    let longUrl = document.querySelector('.long-url').value
     const shortenUrl = new ShortenUrl()
     if(longUrl == ''){
-        console.log('fill it')
+        console.log('put in link')
+    }else if(!longUrl.startsWith('http') || !longUrl.startsWith('http') || !longUrl.startsWith('')){
+        console.log('Please put in a proper link')
     }else{
-        
-        shortenUrl.shorten().then( (res) => {
-        console.log(res)
-    } ).catch(err => console.log(err))
+        shortenUrl.shorten().then((res) => {
+            //document.querySelector('.long-url').value = res.shortUrl;
+            const shortenBtn = document.querySelector('.shorten-btn')
+            const longLink = document.querySelector('.long-link')
+            const shortLink = document.querySelector('.short-link')
+            let linksTable = document.querySelector('.links-table')
+            longLink.value = longUrl
+            shortLink.value = res.shortUrl
+            
+            linksTable.style.display = 'flex'
+            if(copyBtn.style.display = "block" || longUrl.startsWith('rebrand')){
+                copyBtn.addEventListener('click', copyText)
+            }
+            console.log(res.shortUrl)
+        }).catch((err) => console.log(err))
     }
-    
+}
+
+
+function copyText(){
+    let shortLink = document.querySelector('.short-link')
+    shortLink.select()
+    shortLink.setSelectionRange(0, 99999999999)
+
+    document.execCommand("copy")
+    alert("link copied")
 }
