@@ -17,6 +17,14 @@
   --light-grey: #777777;
 }
 
+.error {
+  border: 1px solid red;
+}
+
+.error-text {
+  color: red;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,9 +135,10 @@ button {
   background: var(--main-color);
 }
 
-.shortens-div {
-  position: relative;
-  z-index: 3;
+.shortens-div p {
+  text-align: left;
+  font-family: var(--font-family-light);
+  font-size: 13px;
 }
 
 .shorten-div {
@@ -161,7 +170,6 @@ button {
   width: 14rem;
   height: 40px;
   padding-left: 10px;
-  margin-bottom: 15px;
   z-index: 3;
   border-radius: 5px;
   border: none;

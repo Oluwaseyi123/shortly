@@ -43,6 +43,8 @@ function shortUrl(){
     let longUrl = document.querySelector('.long-url').value
     const shortenUrl = new ShortenUrl()
     if(longUrl == ''){
+        
+        showMessage('Please enter a link', 'error-text')
         console.log('put in link')
     }else if(!longUrl.startsWith('http') || !longUrl.startsWith('http') || !longUrl.startsWith('')){
         console.log('Please put in a proper link')
@@ -73,4 +75,15 @@ function copyText(){
 
     document.execCommand("copy")
     alert("link copied")
+}
+
+function showMessage(message, className){
+    const messageParagraph = document.querySelector('.message')
+    let longUrl = document.querySelector('.long-url')
+    messageParagraph.textContent = message
+    
+    messageParagraph.classList.add(className)
+    setTimeout(()=> {
+        messageParagraph.textContent = ''
+    }, 3000)
 }
